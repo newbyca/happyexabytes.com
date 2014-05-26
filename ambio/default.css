@@ -1,0 +1,167 @@
+﻿@import url("http://fonts.googleapis.com/css?family=Oxygen:700,300");
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+body {
+    font-family: Oxygen, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #7ea6fa;
+    background-color: #0e2034;
+    background-image: -moz-linear-gradient(top, #000810, #0e2034);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000810), to(#0e2034));
+    background-image: -webkit-linear-gradient(top, #000810, #0e2034);
+    background-image: -o-linear-gradient(top, #000810, #0e2034);
+    background-image: linear-gradient(to bottom, #000810, #0e2034);
+    background-image: linear-gradient(to bottom, #000810, #0e2034);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(bg.png);
+    background-size: auto 100%;
+}
+body > .container-fluid {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+blockquote {
+    font-style: italic;
+    border-color: #0e3666;
+}
+h3 {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #000;
+  background-image: none;
+  border-color: #252525;
+}
+.navbar .brand, 
+.navbar-link, 
+.navbar-text,
+.navbar .nav > li > a,
+.navbar-inverse .nav-collapse .nav > li > a, 
+.navbar-inverse .nav-collapse .dropdown-menu a
+{
+    color: #7ea6fa;
+}
+.navbar .nav > li > a:hover {
+    color: #fff;
+}
+.nowrap {
+    white-space: nowrap;
+}
+#feature > div, #description {
+	max-width: 800px;
+	min-height: 300px;
+  margin-top: 2em;
+	margin-right: auto;
+	margin-left: auto;
+}
+#feature h2, #feature p {
+
+}
+#feature p {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+}
+#feature .btn{
+    width: 100%;
+    max-width: 300px;
+}
+#logo {
+    margin-top: .5em;
+    max-width: 400px;
+}
+#logo + p {
+    font-size: 2em;
+    line-height: 1.22em;
+    margin-bottom: .75em;
+}
+#demo {
+    float: left;
+}
+#description{
+  padding-top: 2em;
+  clear: both;
+}
+#description p{
+    font-size: 1.4em;
+}
+.btn {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.4em;
+}
+.footer {
+    padding-top: 3em;
+    clear: both;
+}
+
+.toc {
+    list-style: none;
+    margin-left: 0;
+}
+.toc > li > a {
+    display: block;
+    font-size: 1.5em;
+    margin: .5em 0 .5em 0;
+    padding: .5em 0 .5em 1em;
+    background-color: #000;
+    max-width: 400px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.toc > li > a:hover {
+    text-decoration: none;
+    background-color: #7ea6fa;
+    color: #000;
+}
+
+ul.slides {
+    list-style: none;
+    margin-left: 0;
+}
+ul.slides li{
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: solid 1px #0e3666;
+
+}
+
+@media (max-width: 979px) {
+    body > .container-fluid {
+        padding-top: 0;
+    }
+}
+@media (max-width: 800px) {
+    #feature {
+        text-align: center;
+    }
+    #feature p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #feature .btn{
+        width: 100%;
+        max-width: 200px;
+    }
+    #logo {
+        margin-top: 3em;
+        max-width: 100%;
+    }
+    #demo {
+        float: none;
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+
+}

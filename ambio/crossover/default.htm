@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="Ambio - Perfect Ambience - Ambio lets you create perfect ambience and whitenoise so you can relax, ponder, and sleep better">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Ambio - Perfect Ambience</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="../default.css" rel="stylesheet" media="screen">
+
+  <style>
+    table{
+      margin-bottom: 2em;
+    }
+    td{
+      padding-right: 2em;
+    }
+  </style>
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="../">Ambio</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="../terms/">Terms</a></li>
+              <li><a href="../privacy/">Privacy</a></li>
+              <li><a href="http://blog.happyexabytes.com">Blog</a></li>
+              <li><a href="https://plus.google.com/u/0/communities/101371588451164308826">Beta Group</a></li>
+              <li><a href="http://ambio.uservoice.com">Feedback &amp; Support</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div>
+
+            <h1>Crossover</h1>
+            <p>Crossover is a built-in feature of Ambio that allows the playback of a loop to seamlessly jump from one Mix to another.</p>
+            <p>The rest of this post may get complicated and technical, but always keep this in mind: Crossover is <em>automatic</em>. You don't need to do anything special, just create mixes the way you normally would. Ambio does the rest for you!</p>
+
+            <h3>Example</h3>
+            <p>Let's try an example first. Open Ambio and follow along...</p>
+            
+            <p>1 - First, create two mixes that look like this:</p>
+            <h4>"Rain+Clock"</h4>
+            <table border=0 cellpadding="0">
+              <tr>
+                <td>[Channel 1]</td>
+                <td>Light Forest Rain</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+              <tr>
+                <td>[Channel 2]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+            </table>
+            <h4>"Airplane+Clock"</h4>
+            <table border=0 cellpadding="0">
+              <tr>
+                <td>[Channel 1]</td>
+                <td>Airplane Cabin</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+              <tr>
+                <td>[Channel 2]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 25)</td>
+              </tr>
+            </table>
+
+            <p>2 - Now, let's put these two mixes into a new Playlist called <em>Clocks</em>:</p>
+            <h4>"Clocks"</h4>
+            <table border=0 cellpadding="0">
+              <tr>
+                <td>[Rain+Clock]</td>
+                <td>(2:00)</td>
+              </tr>
+              <tr>
+                <td>[Airplane+Clock]</td>
+                <td>(2:00)</td>
+              </tr>
+            </table>
+            
+            <p>Start playing the <em>Clocks</em> playlist. Make sure that the Playlist Pin is disabled. When the player get's to the end of the <em>Rain+Clock</em> mix it crossfades into the <em>Airplane+Clock</em> mix.</p>
+            
+            <p>But notice what happens to the Tick-Tock loop. Instead of fading out the Tick-Tock loop from <em>Rain+Clock</em> and fading in the Tick-Tock loop in <em>Airplane+Clock</em>, the player maintains a single instance of the Tick-Tock loop and gradually lowers it's level from 50 to 25. This is what we mean by 'crossover'…instead of treating each Tick-Tock loop separately, the player takes Tick-Tock from the first mix and 'crosses it over' to the next mix. </p>
+
+            <p>While crossing over Tick-Tock, the playback system will also gradually adjust it's loop properties to match the next Mix. But this is only true for the loop's Volume property at the moment. The player isn't smart enough to also crossover Repeat Level*. In fact, if the repeat level values don't match, crossover <em>will not</em> occur.</p>
+
+            <p>*Repeat level sets how long this channel should wait to replay itself. A high repeat level will make this channel play infrequently, a low repeat level will make this channel play often.</p>
+
+            <h3>Why do we use crossover?</h3>
+            <p>Because it's a truly sweet feature that greatly improves audio experience! It makes transitioning from one mix to another smooth and less obvious. In more grandiose terms: Crossover allows you to put multiple mixes together and form an ambience composition thats bigger than the sum of its parts.</p>
+
+            <h3>What if there was <em>no</em> crossover?</h3>
+            <p>Imagine what would happen to our two clock mixes. As one mix crossfaded into the other the two Tick-Tock samples would interfere with each other, ticking and tocking arhythmically, instead of there being just one, steady Tick-Tock sound.</p>
+            
+            <h3>When will crossover activate?</h3>
+            <p>Crossover will activate for any of the loops in common when one mix crossfades into another. This happens when the player is playing and:</p>
+            <ul>
+              <li>Playlist Pin is disabled</li>
+              <li>or, you Long-press FF or RWD</li>
+              <li>or, You Long-press a mix from the main playlist menu</li>
+            </ul>
+            
+            <h3>Does crossover apply to multiple loops?</h3>
+            <p>Yes, but only for each loop that can be uniquely paired with a loop having the same properties in the next mix. Loops which can't be paired will not crossover.</p>
+            
+            <p>For example, suppose you have...</p>
+            <h4>"Mix A"</h4>
+            <table border=0 cellpadding="0">
+              <tr>
+                <td>[Channel 1]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+            </table>
+            <h4>"Mix B"</h4>
+            <table border=0 cellpadding="0">
+              <tr>
+                <td>[Channel 1]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 25)</td>
+              </tr>
+              <tr>
+                <td>[Channel 2]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+              <tr>
+                <td>[Channel 3]</td>
+                <td>Tick-Tock</td>
+                <td>(Repeat Level = ∞, Volume = 50)</td>
+              </tr>
+            </table>
+
+            <p>In this case crossover will only apply to one instance from either mix. That is, the remaining 2 instances of Tick-Tock int the second mix will be faded in like any other loop.</p>
+
+        </div>
+
+        <div class="footer">
+            <p id="copyright">&copy; <a href="/">The Happy Exabytes</a></p>
+        </div>
+
+    </div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/url.min.js"></script>
+<script src="../../js/url-x.js"></script>
+<script src="../../js/no-chrome.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45275677-1', 'happyexabytes.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
